@@ -11,15 +11,15 @@ const displayNav = navbar => {
         const { category_name } = nav;
         const li = document.createElement('li');
         li.classList.add('nav-item')
-        li.innerHTML = `<button onclick="loadButton()" class=" fs-4 mb-4 mt-4 ms-4" >${category_name}</button>
+        li.innerHTML = `<button onclick="display(${nav.category_id})" class=" fs-4 mb-4 mt-4 ms-4" >${category_name}</button>
         `;
         navContainer.appendChild(li);
     })
 }
 loadNav();
 
-const loadAllNews = async () => {
-    const res = await fetch("https://openapi.programming-hero.com/api/news/category/08");
+const display = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/news/category/0${id}`);
     const data = await res.json();
     // return data;
     displayCardNews(data.data);
@@ -27,8 +27,8 @@ const loadAllNews = async () => {
 
 
 // spinner 
-// const spinner = document.getElementById("spinner");
-// spinner.classList.remove("d-none");
+const spinner = document.getElementById("spinner");
+spinner.classList.remove("d-none");
 
 const displayCardNews = mynews => {
 
@@ -65,7 +65,7 @@ const displayCardNews = mynews => {
         </div >
        </div >
        <div class="col"><i class="far fa-eye"></i>
-        ${total_view ? total_view : 0}
+        ${total_view ? total_view : 0}M
   </div> 
   <div class='me-4' id=''>
   <i class="fas fa-star"></i>
@@ -89,29 +89,6 @@ const displayCardNews = mynews => {
     document.getElementById("category-count").innerText = mynews.length;
 }
 
-// const loadModal = async () => {
-//     const res = await fetch("https://openapi.programming-hero.com/api/news/0282e0e58a5c404fbd15261f11c2ab6a");
-//     const data = await res.json();
-//     // return data;
-//     showModal(data.data[0]);
-// }
-// const showModal = modal => {
-//     // console.log(modal);
-//     const { thumbnail_url, details, title } = modal
 
-//     const modalBody = document.getElementById("modal-body");
-//     modalBody.textContent = "";
-//     modalBody.innerHTML = `
-//     <img src="${thumbnail_url}"/>
-//     <p class="py-4">${title}</p>
-
-//     <p class="py-4">${details.length > 500 ? details.slice(0, 500) + '...' : details
-//         } </p>
-//     `;
-// }
 loadModal();
-loadAllNews();
-
-// loadButton = () => {
-
-// }
+display();
