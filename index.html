@@ -5,43 +5,73 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daily Express</title>
-    <!----- Bootstrap Link ------>
+
+    <!-- Bootstrap link  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <!------CSS Link---- -->
-    <link rel="stylesheet" href="style.css">
+
+    <!-- custom css link  -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- font awesome link  -->
+    <script src="https://kit.fontawesome.com/ac406f2ac7.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="container">
     <header>
-        <section class=" container">
-            <nav class=" navbar navbar-expand-lg bg-light my-3">
-                <div class="container-fluid p-2">
-                    <h6 class="text-primary fs-1">Daily Express</h6>
-                    <div class="d-flex" role="search">
-                        <a class="nav-link active text-primary fs-4 me-3" aria-current="page" href="#">News</a>
-                        <a class="nav-link active fs-4 mx-1" href="#">Blog</a>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-5" href="#">Daily Express</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    </ul>
+                    <div class="d-flex navbar-nav" role="search">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">blog</a>
+                        </li>
                     </div>
                 </div>
-            </nav>
-        </section>
+            </div>
+        </nav>
     </header>
     <main>
-        <!------- nav section ------>
         <section>
+            <!-- nav section  -->
             <div>
-                <ul id="nav-container" class="nav justify-content-center">
-
+                <ul id="nav-bar" class="nav justify-content-center">
                 </ul>
             </div>
         </section>
-
-        <!------- card section ------>
-        <section class="">
-            <div id="card-container" class="card mb-3">
-                <div class="row g-0">
+        <!-- counting categorys  -->
+        <section>
+            <div class="text-center border w-100% mb-4">
+                <h1><span id="category-count"></span> items found for category News</h1>
+            </div>
+        </section>
+        <!-- spinner section  -->
+        <section>
+            <div id="spinner" class="text-center d-none">
+                <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
+        <!-- card section  -->
+        <section>
+            <div class=" row row-cols-1 row-cols-md-1 g-4" style="max-width:100%;">
+                <div id="card-container">
 
                 </div>
+
             </div>
         </section>
         <section>
@@ -50,34 +80,41 @@
 
                 </div>
             </div>
-
         </section>
 
+        <section>
+            <!-- Button trigger modal -->
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div id="modal-body" class="modal-body">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <!------ footer section--- -->
-    <footer class="p-2 h-25 border-top text-center">
+    <footer class=" p-4 border text-center">
         <div>
-            <p>Copyright © 2022 - All right reserved by Daily Express</p>
+            <p>Copyright © 2022 - All right reserved by World NEWS Ltd</p>
         </div>
-
     </footer>
 
 
 
-
-
-
-
-
-    <!----- Bootstrap Link ------>
+    <script src="./js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-
-    <!------- JavaScript Link ------>
-    <script src="js.js"></script>
-    <script src="app.js"></script>
 </body>
 
 </html>
