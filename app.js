@@ -74,7 +74,7 @@ const displayCardNews = mynews => {
         </div >
        </div >
        <div class="col"><i class="far fa-eye"></i>
-        ${total_view ? total_view : 0}
+        ${total_view ? total_view : 0}M
   </div> 
   <div class='me-4' id=''>
   <i class="fas fa-star"></i>
@@ -85,7 +85,7 @@ const displayCardNews = mynews => {
   </div>
  
   <div class="col">
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <button type="button" class=" col-12 mt-0 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Details
 </button>
   </div>
@@ -98,11 +98,11 @@ const displayCardNews = mynews => {
     document.getElementById("category-count").innerText = mynews.length;
 }
 
-
+// onclick="selectNewsId('${idData._id}')" 
 
 
 const loadModal = async (id) => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/news/${id}`);
+    const res = await fetch(`https://openapi.programming-hero.com/api/news/`);
     const data = await res.json();
     // return data;
     showModal(data.data);
