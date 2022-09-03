@@ -11,7 +11,7 @@ const displayNav = navbar => {
         const { category_name } = nav;
         const li = document.createElement('li');
         li.classList.add('nav-item')
-        li.innerHTML = `<button onclick="display(${nav.category_id})" class=" fs-4 mb-4 mt-4 ms-4" >${category_name}</button>
+        li.innerHTML = `<button onclick="display(${nav.category_id})" class=" fs-4 mb-4 mt-4 ms-4 border-0 bg-light" >${category_name}</button>
         `;
         navContainer.appendChild(li);
     })
@@ -65,7 +65,7 @@ const displayCardNews = mynews => {
         </div >
        </div >
        <div class="col"><i class="far fa-eye"></i>
-        ${total_view ? total_view : 0}M
+        ${total_view ? total_view : 0}
   </div> 
   <div class='me-4' id=''>
   <i class="fas fa-star"></i>
