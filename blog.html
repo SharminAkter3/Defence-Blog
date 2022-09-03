@@ -6,7 +6,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    <style>
+        p {
+            font-size: medium;
+            margin-left: 20px;
+        }
+    </style>
 </head>
+
+<section class="container">
+    <h3>1. What's the difference between var, let and const keywords in JavaScript?</h3>
+    <p>
+        The differences between var, let, and const variable declaration in JavaScript include:<br>
+        Variables declared with var and const are scoped to the immediate function body.<br>
+        Variables declared with the var keyword are hoisted. Hoisting means that the variable can be accessed in their
+        enclosing scope even before they are declared.<br>
+        Variables declared with the let keyword are block-scoped, which means the variables will have scope to the
+        immediate
+        enclosing block.
+    </p>
+
+    <h3> 2. What's the difference between regular functions and arrow functions ?</h3>
+
+    <p>
+        Arrow function — also called fat arrow function— is a new feature introduced in ES6 that is a more concise
+        syntax for writing function expressions. While both regular JavaScript functions and arrow functions work in a
+        similar manner, there are certain differences between them.
+        <br>
+
+        Arrow functions do not have an arguments binding. However, they have access to the arguments object of the
+        closest non-arrow parent function. Named and rest parameters are heavily relied upon to capture the arguments
+        passed to arrow functions.
+
+        <br>
+        Unlike regular functions, arrow functions do not have their own this. The value of this inside an arrow function
+        remains the same throughout the lifecycle of the function and is always bound to the value of this in the
+        closest non-arrow parent function.s
+
+    </p>
+
+    <h3>3. What's the difference between foreach(), filter(), map() and find() ?</h3>
+
+    <p>
+        Foreach takes a callback function and run that callback function on each element of array one by one.Basically
+        forEach works as a traditional for loop looping over the array and providing you array elements to do operations
+        on them.
+        <br>
+        The main difference between forEach and filter is that forEach just loop over the array and executes the
+        callback but filter executes the callback and check its return value. If the value is true element remains in
+        the resulting array but if the return value is false the element will be removed for the resulting array.
+        <br>
+        Map like filter & foreach takes a callback and run it against every element on the array but whats makes it
+        unique is it generate a new array based on your existing array.
+        <br>
+        Function .find() is also a search function like the previous but they differ in one small detail — this function
+        returns only one match in an array. If in an array is more than one result, the function will return the first
+        that has matched.
+    </p>
+
+    <h3>4. How we can use template string in JavaScript ?</h3>
+    <p>
+        Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate
+        variables and expressions into strings without needing to concatenate like in older versions of JavaScript.
+        <br> It
+        allows us to create strings that are complex and contain dynamic elements. Another great thing that comes with
+        template strings are tags. <br>Tags are functions that take a string and the decomposed parts of the string as
+        parameters and are great for converting strings to different entities.
+    </p>
+</section>
 
 <body>
 

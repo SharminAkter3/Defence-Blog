@@ -26,14 +26,23 @@ const display = async (id) => {
 }
 
 
-// spinner 
-const spinner = document.getElementById("spinner");
-spinner.classList.remove("d-none");
 
 const displayCardNews = mynews => {
 
+    // spinner 
     const spinner = document.getElementById("spinner");
-    spinner.classList.add("d-none");
+    const noNews = document.getElementById("no-news");
+    const allCategoryNO = document.getElementById("all-category");
+    if (mynews.length === 0) {
+        spinner.classList.remove("d-none");
+        noNews.classList.remove("d-none");
+        allCategoryNO.classList.add("d-none");
+    }
+    else {
+        spinner.classList.add("d-none");
+        noNews.classList.add("d-none");
+        allCategoryNO.classList.remove("d-none");
+    }
 
     // console.log(mynews);
 
@@ -88,22 +97,26 @@ const displayCardNews = mynews => {
     // category count 
     document.getElementById("category-count").innerText = mynews.length;
 }
-const loadModal = async () => {
-    const res = await fetch("https://openapi.programming-hero.com/api/news/0282e0e58a5c404fbd15261f11c2ab6a");
+
+
+
+
+const loadModal = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/news/${id}`);
     const data = await res.json();
     // return data;
-    showModal(data.data[0]);
+    showModal(data.data);
 }
 const showModal = modal => {
     // console.log(modal);
-    const { thumbnail_url, details, title } = modal
-
+    const { author, thumbnail_url, details, title } = modal
     const modalBody = document.getElementById("modal-body");
     modalBody.textContent = "";
     modalBody.innerHTML = `
+    <h5 class="modal-title" id="exampleModalLabel">${author.name ? author.name : 'No data Avilable'} </h5>
     <img src="${thumbnail_url}"/>
     <p class="py-4">${title}</p>
-  
+
     <p class="py-4">${details.length > 500 ? details.slice(0, 500) + '...' : details
         } </p>
     `;
