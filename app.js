@@ -88,7 +88,26 @@ const displayCardNews = mynews => {
     // category count 
     document.getElementById("category-count").innerText = mynews.length;
 }
+const loadModal = async () => {
+    const res = await fetch("https://openapi.programming-hero.com/api/news/0282e0e58a5c404fbd15261f11c2ab6a");
+    const data = await res.json();
+    // return data;
+    showModal(data.data[0]);
+}
+const showModal = modal => {
+    // console.log(modal);
+    const { thumbnail_url, details, title } = modal
 
+    const modalBody = document.getElementById("modal-body");
+    modalBody.textContent = "";
+    modalBody.innerHTML = `
+    <img src="${thumbnail_url}"/>
+    <p class="py-4">${title}</p>
+  
+    <p class="py-4">${details.length > 500 ? details.slice(0, 500) + '...' : details
+        } </p>
+    `;
+}
 
 loadModal();
 display();
